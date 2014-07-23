@@ -20,11 +20,11 @@ From:
   /Users/franktheo/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.4/lib/active_support/dependencies.rb:247:in `block in require'
   /Users/franktheo/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.4/lib/active_support/dependencies.rb:232:in `load_dependency'
   /Users/franktheo/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.4/lib/active_support/dependencies.rb:247:in `require'
-  /Users/franktheo/Rails/sample_app_3/spec/spec_helper.rb:7:in `block in <top (required)>'
+  /Users/franktheo/Rails/sample_app_ch10_C/spec/spec_helper.rb:7:in `block in <top (required)>'
   /Users/franktheo/.rvm/gems/ruby-2.1.2/gems/spork-1.0.0rc4/lib/spork.rb:24:in `prefork'
-  /Users/franktheo/Rails/sample_app_3/spec/spec_helper.rb:4:in `<top (required)>'
-  /Users/franktheo/Rails/sample_app_3/spec/models/user_spec.rb:1:in `require'
-  /Users/franktheo/Rails/sample_app_3/spec/models/user_spec.rb:1:in `<top (required)>'
+  /Users/franktheo/Rails/sample_app_ch10_C/spec/spec_helper.rb:4:in `<top (required)>'
+  /Users/franktheo/Rails/sample_app_ch10_C/spec/models/micropost_spec.rb:1:in `require'
+  /Users/franktheo/Rails/sample_app_ch10_C/spec/models/micropost_spec.rb:1:in `<top (required)>'
   /Users/franktheo/.rvm/gems/ruby-2.1.2/gems/rspec-core-2.13.1/lib/rspec/core/configuration.rb:819:in `load'
   /Users/franktheo/.rvm/gems/ruby-2.1.2/gems/rspec-core-2.13.1/lib/rspec/core/configuration.rb:819:in `block in load_spec_files'
   /Users/franktheo/.rvm/gems/ruby-2.1.2/gems/rspec-core-2.13.1/lib/rspec/core/configuration.rb:819:in `each'
@@ -32,47 +32,79 @@ From:
   /Users/franktheo/.rvm/gems/ruby-2.1.2/gems/rspec-core-2.13.1/lib/rspec/core/command_line.rb:22:in `run'
   /Users/franktheo/.rvm/gems/ruby-2.1.2/gems/rspec-core-2.13.1/lib/rspec/core/runner.rb:80:in `run'
   /Users/franktheo/.rvm/gems/ruby-2.1.2/gems/rspec-core-2.13.1/lib/rspec/core/runner.rb:17:in `block in autorun'
-....................FFFF...................
+..................................................FF.F..FFF...............................FFF...........
 
 Failures:
 
-  1) Authentication signin with valid information 
-     Failure/Error: click_button "Sign in"
-     ActionView::MissingTemplate:
-       Missing template sessions/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
-         * "/Users/franktheo/Rails/sample_app_3/app/views"
-     # ./spec/requests/authentication_pages_spec.rb:34:in `block (4 levels) in <top (required)>'
+  1) Authentication authorization for non-signed-in users in the Microposts controller submitting to the create action 
+     Failure/Error: specify { expect(response).to redirect_to(signin_path) }
+     NoMethodError:
+       undefined method `assertions' for #<RSpec::Rails::TestUnitAssertionAdapter::AssertionDelegator:0x007f8119eb9de8>
+     # ./spec/requests/authentication_pages_spec.rb:79:in `block (6 levels) in <top (required)>'
 
-  2) Authentication signin with valid information 
-     Failure/Error: click_button "Sign in"
-     ActionView::MissingTemplate:
-       Missing template sessions/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
-         * "/Users/franktheo/Rails/sample_app_3/app/views"
-     # ./spec/requests/authentication_pages_spec.rb:34:in `block (4 levels) in <top (required)>'
+  2) Authentication authorization for non-signed-in users in the Microposts controller submitting to the destroy action 
+     Failure/Error: specify { expect(response).to redirect_to(signin_path) }
+     NoMethodError:
+       undefined method `assertions' for #<RSpec::Rails::TestUnitAssertionAdapter::AssertionDelegator:0x007f8119f4cff8>
+     # ./spec/requests/authentication_pages_spec.rb:84:in `block (6 levels) in <top (required)>'
 
-  3) Authentication signin with valid information 
-     Failure/Error: click_button "Sign in"
-     ActionView::MissingTemplate:
-       Missing template sessions/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
-         * "/Users/franktheo/Rails/sample_app_3/app/views"
-     # ./spec/requests/authentication_pages_spec.rb:34:in `block (4 levels) in <top (required)>'
+  3) Authentication authorization for non-signed-in users in the Users controller submitting to the update action 
+     Failure/Error: specify { expect(response).to redirect_to(signin_path) }
+     NoMethodError:
+       undefined method `assertions' for #<RSpec::Rails::TestUnitAssertionAdapter::AssertionDelegator:0x007f8118329b28>
+     # ./spec/requests/authentication_pages_spec.rb:97:in `block (6 levels) in <top (required)>'
 
-  4) Authentication signin with valid information 
-     Failure/Error: click_button "Sign in"
-     ActionView::MissingTemplate:
-       Missing template sessions/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
-         * "/Users/franktheo/Rails/sample_app_3/app/views"
-     # ./spec/requests/authentication_pages_spec.rb:34:in `block (4 levels) in <top (required)>'
+  4) Authentication authorization as wrong user submitting a GET request to the Users#edit action 
+     Failure/Error: specify { expect(response).to redirect_to(root_url) }
+     NoMethodError:
+       undefined method `assertions' for #<RSpec::Rails::TestUnitAssertionAdapter::AssertionDelegator:0x007f811b2d3dd8>
+     # ./spec/requests/authentication_pages_spec.rb:115:in `block (5 levels) in <top (required)>'
 
-Finished in 0.50633 seconds
-43 examples, 4 failures
+  5) Authentication authorization as wrong user submitting a PATCH request to the Users#update action 
+     Failure/Error: specify { expect(response).to redirect_to(root_url) }
+     NoMethodError:
+       undefined method `assertions' for #<RSpec::Rails::TestUnitAssertionAdapter::AssertionDelegator:0x007f811b4ae428>
+     # ./spec/requests/authentication_pages_spec.rb:120:in `block (5 levels) in <top (required)>'
+
+  6) Authentication authorization as non-admin user submitting a DELETE request to the Users#destroy action 
+     Failure/Error: specify { expect(response).to redirect_to(root_url) }
+     NoMethodError:
+       undefined method `assertions' for #<RSpec::Rails::TestUnitAssertionAdapter::AssertionDelegator:0x007f811b586bc0>
+     # ./spec/requests/authentication_pages_spec.rb:132:in `block (5 levels) in <top (required)>'
+
+  7) Micropost pages micropost creation with invalid information should not create a micropost
+     Failure/Error: expect { click_button "Post" }.not_to change(Micropost, :count)
+     Capybara::ElementNotFound:
+       Unable to find button "Post"
+     # ./spec/requests/micropost_pages_spec.rb:16:in `block (5 levels) in <top (required)>'
+     # ./spec/requests/micropost_pages_spec.rb:16:in `block (4 levels) in <top (required)>'
+
+  8) Micropost pages micropost creation with invalid information error messages 
+     Failure/Error: before { click_button "Post" }
+     Capybara::ElementNotFound:
+       Unable to find button "Post"
+     # ./spec/requests/micropost_pages_spec.rb:20:in `block (5 levels) in <top (required)>'
+
+  9) Micropost pages micropost creation with valid information should create a micropost
+     Failure/Error: before { fill_in 'micropost_content', with: "Lorem ipsum" }
+     Capybara::ElementNotFound:
+       Unable to find field "micropost_content"
+     # ./spec/requests/micropost_pages_spec.rb:27:in `block (4 levels) in <top (required)>'
+
+Finished in 3.96 seconds
+104 examples, 9 failures
 
 Failed examples:
 
-rspec ./spec/requests/authentication_pages_spec.rb:40 # Authentication signin with valid information 
-rspec ./spec/requests/authentication_pages_spec.rb:39 # Authentication signin with valid information 
-rspec ./spec/requests/authentication_pages_spec.rb:38 # Authentication signin with valid information 
-rspec ./spec/requests/authentication_pages_spec.rb:37 # Authentication signin with valid information 
+rspec ./spec/requests/authentication_pages_spec.rb:79 # Authentication authorization for non-signed-in users in the Microposts controller submitting to the create action 
+rspec ./spec/requests/authentication_pages_spec.rb:84 # Authentication authorization for non-signed-in users in the Microposts controller submitting to the destroy action 
+rspec ./spec/requests/authentication_pages_spec.rb:97 # Authentication authorization for non-signed-in users in the Users controller submitting to the update action 
+rspec ./spec/requests/authentication_pages_spec.rb:115 # Authentication authorization as wrong user submitting a GET request to the Users#edit action 
+rspec ./spec/requests/authentication_pages_spec.rb:120 # Authentication authorization as wrong user submitting a PATCH request to the Users#update action 
+rspec ./spec/requests/authentication_pages_spec.rb:132 # Authentication authorization as non-admin user submitting a DELETE request to the Users#destroy action 
+rspec ./spec/requests/micropost_pages_spec.rb:15 # Micropost pages micropost creation with invalid information should not create a micropost
+rspec ./spec/requests/micropost_pages_spec.rb:21 # Micropost pages micropost creation with invalid information error messages 
+rspec ./spec/requests/micropost_pages_spec.rb:28 # Micropost pages micropost creation with valid information should create a micropost
 
-Randomized with seed 12958
+Randomized with seed 53699
 
